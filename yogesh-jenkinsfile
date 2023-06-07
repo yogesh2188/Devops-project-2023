@@ -37,7 +37,7 @@ pipeline{
                }
             }       
         }
-        stage("Static code analysis: Sonarqube"){
+        stage("Static code analysis: sonarqube-Api"){
             when { expression {  params.action == 'create' } }
             steps{
                script{  
@@ -46,7 +46,7 @@ pipeline{
                }
             }       
         }
-         stage('Quality Gate Status Check : Sonarqube'){
+         stage('Quality Gate Status Check : sonarqube-Api'){
          when { expression {  params.action == 'create' } }
             steps{
                script{

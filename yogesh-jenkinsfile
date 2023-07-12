@@ -94,8 +94,8 @@ pipeline{
                script{
                    
                     sh """
-                    aws configure set aws_access_key_id "$AWS_ACCESS_KEY_ID"
-                    aws configure set aws_secret_access_key "$AWS_SECRET_KEY_ID"
+                    aws configure set aws_access_key_id "$ACCESS_KEY"
+                    aws configure set aws_secret_access_key "$SECRET_KEY"
                     aws configure set region "${params.Region}"
                     """
                     dockerImagePush("${params.aws_account_id}","${params.Region}","${params.ECR_REPO_NAME}")
